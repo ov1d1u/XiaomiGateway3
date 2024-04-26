@@ -181,6 +181,16 @@ class BLEFloatConv(BaseConv):
             # convert to int when round is zero
             value = round(value, self.round or None)
         payload[self.attr] = value
+        
+@dataclass
+class BLEBoolConv(BaseConv):
+    """Decode from int to bool, encode from bool to int."""
+
+    def decode(self, device: "XDevice", payload: dict, value: str):
+        payload[self.attr] = bool(int(value, 16))
+
+    def encode(self, device: "XDevice", payload: dict, value: bool):
+        super().encode(device, payload, "{:02x}".format(value))
 
 
 @dataclass

@@ -1660,7 +1660,7 @@ DEVICES += [{
     16143: ["Linptech", "Water Leak Sensor", "RS1BB", "linp.flood.rs1bb"],
     "spec": [
         BLEByteConv("battery", "sensor", mi=19459),
-        BoolConv("water_leak", "binary_sensor", mi=18438),
+        BLEBoolConv("water_leak", "binary_sensor", mi=18438),
     ],
 }, {
     16204: ["Linptech", "Pressure Sensor", "PS1BB", "linp.senpres.ps1bb"],
