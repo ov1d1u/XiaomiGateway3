@@ -1657,10 +1657,10 @@ DEVICES += [{
         ConstConv("action", mi="3.e.1025", value="timer2"),
     ],
 }, {
-    16143: ["Linptech", "Submersion Sensor", "RS1BB", "linp.flood.rs1bb"],
+    16143: ["Linptech", "Water Leak Sensor", "RS1BB", "linp.flood.rs1bb"],
     "spec": [
-        BaseConv("water_leak", "binary_sensor", mi="2.p.1006"),  # bool
-        BaseConv("battery", "sensor", mi="3.p.1003"),  # uint8
+        BLEByteConv("battery", "sensor", mi=19459),
+        BoolConv("water_leak", "binary_sensor", mi=18438),
     ],
 }, {
     16204: ["Linptech", "Pressure Sensor", "PS1BB", "linp.senpres.ps1bb"],
